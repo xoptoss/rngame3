@@ -1,0 +1,45 @@
+package mainPackage;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class mainClass {
+	public static void main(String[] args) {
+
+		Random random = new Random();
+		String input;
+		boolean guessRight;
+		int answer,number,guess=0;
+
+
+		answer=	random.nextInt(9)+1;
+
+		guessRight = false;
+		System.out.println("Im thinking of a number between 1-10, Can you guess it?");	
+		Scanner tKeyboard = new Scanner(System.in);
+
+		while (guess < 3) { 
+			number=tKeyboard.nextInt();
+			if (number == answer)
+			{
+				guessRight = true;     
+				System.out.println("Good Job, you guessed it!");
+			}
+			else
+			{
+
+				if(number>answer)
+				{
+					System.out.println("You guessed too high, try agian.");
+				}
+				else if(number<answer)
+				{
+					System.out.println("you guessed too low, try agian");
+				}
+				guess++;
+			}
+
+
+		}
+	}
+}
